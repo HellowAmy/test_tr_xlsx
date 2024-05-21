@@ -52,7 +52,7 @@ public:
             XMLElement *en = ele->FirstChildElement(name.c_str());
             if(en != nullptr)
             {
-                return en->GetText();
+                return to_str(en->GetText());
             }
         }
         return "";
@@ -65,7 +65,7 @@ public:
             XMLElement *en = ele->FirstChildElement(name.c_str());
             if(en != nullptr)
             {
-                return en->Attribute(index.c_str());
+                return to_str(en->Attribute(index.c_str()));
             }
         }
         return "";

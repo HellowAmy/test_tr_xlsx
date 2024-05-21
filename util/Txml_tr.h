@@ -115,6 +115,11 @@ public:
                         message.location_line = qstos(vec_message[6]);
                         context.message.push_back(message);
                     }
+                    else
+                    {
+                        line_row--;
+                        break;
+                    }
                 }
                 xml_data.context.push_back(context);
             }
@@ -236,6 +241,7 @@ public:
         {
             XMLElement* context = doc->NewElement("context");
             XMLElement* name = doc->NewElement("name");
+            name->SetText(it->name.c_str());
             context->InsertFirstChild(name);
 
             for(auto itm = it->message.begin();itm!=it->message.end();itm++)

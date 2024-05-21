@@ -21,5 +21,9 @@ protected:
 private:
     QTranslator *_trp = nullptr;
 
+    void ts_to_xlsx(QString src,QString dst);
+    void xlsx_to_ts(QString src,QString dst);
+
+
 };
 #endif // MAIN_WINDOW_H

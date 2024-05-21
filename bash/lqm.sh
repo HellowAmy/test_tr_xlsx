@@ -1,4 +1,4 @@
-cd ../config/language/cn
-lrelease *.ts -qm cn.qm
+cd ../config/language/cn/dst_ts
+lrelease *.ts -qm ../tr_qm/cn.qm
 
 
