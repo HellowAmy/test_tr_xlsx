@@ -13,6 +13,8 @@
 #include <QPushButton>
 #include <QFileDialog>
 
+#include "wid_check_dig.h"
+
 #include "Txml_tr.h"
 
 #include "Tvlog.h"
@@ -96,6 +98,12 @@ main_window::main_window(QWidget *parent) : QWidget(parent)
         {
             ts_to_xlsx(src,dst);
         }
+        else 
+        {
+            wid_check_dig dig;
+            dig.set_txt_tips(tr("Source Ts Path And Xlsx Savs Path Is Empty"));
+            dig.exec();
+        }
     });
 
     connect(butt_ts,&QPushButton::clicked,[=](){
@@ -105,6 +113,13 @@ main_window::main_window(QWidget *parent) : QWidget(parent)
         if(src != "" && dst != "")
         {
             xlsx_to_ts(src,dst);
+        }
+        else 
+        {
+            wid_check_dig dig;
+            dig.set_txt_tips(tr("Xlsx Savs Path And Target Ts Path Is Empty"));
+            int ret = dig.exec();
+            vlogd($(ret));
         }
     });
 

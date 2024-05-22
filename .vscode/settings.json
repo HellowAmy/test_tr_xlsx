@@ -65,6 +65,7 @@
         "qlabel": "cpp",
         "cstring": "cpp",
         "qfile": "cpp",
-        "qstring": "cpp"
+        "qstring": "cpp",
+        "qdialog": "cpp"
     }
 }
