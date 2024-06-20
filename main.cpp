@@ -1,7 +1,9 @@
 #include <QApplication>
 #include <QWidget>
+#include <QFile>
 
 #include <iostream>
+#include <unistd.h>
 
 #include "tinyxml2.h"
 #include "xlsxdocument.h"
@@ -17,10 +19,29 @@
 #include "Txlsx.h"
 #include "Tvlog.h"
 #include "Ttinyxml.h"
+#include "Ttx_tmt_tr.h"
 
 using namespace QXlsx;
 using namespace std;
 using namespace tinyxml2;
+
+void test_1()
+{
+    QString path_key = "/home/cong/.ssh/TXYKey.txt";
+    bool ok = _sp_tmt_tr_->init_handle(path_key);
+    if(ok)
+    {
+        auto vec = _sp_tmt_tr_->get_tmt_tr({
+            "Default and autodefault buttons decide what happens when the user presses enter in a dialog that is big dog.",
+            "that is dog",
+            "me is cat are you is what",
+            "have come a bus",
+            "will click you face follow China"
+        });   
+        print_con(vec,1);
+    }
+};
+
 
 void show_xml_ts(ct_xml_ts *ct)
 {
@@ -126,9 +147,9 @@ int perse_arg(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
-#if 0
+#if 1
     cout<<"== begin =="<<endl;
-    test_ts_read_write();
+    test_1();
     cout<<"== end =="<<endl;
     return 0;
 #endif

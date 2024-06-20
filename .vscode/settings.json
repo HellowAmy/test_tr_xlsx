@@ -66,6 +66,8 @@
         "cstring": "cpp",
         "qfile": "cpp",
         "qstring": "cpp",
-        "qdialog": "cpp"
+        "qdialog": "cpp",
+        "future": "cpp",
+        "sstream": "cpp"
     }
 }
